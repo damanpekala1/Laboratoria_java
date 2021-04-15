@@ -3,6 +3,8 @@ package pl.lublin.wsei.java.cwiczenia;
 public class Main {
 
     public static void main(String[] args) {
+        // 4
+        System.out.println("Hello Java world\n");
         // 7a
         System.out.print("Ala");
         System.out.print("ma");
