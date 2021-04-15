@@ -3,10 +3,11 @@ package pl.lublin.wsei.java.cwiczenia;
 import org.w3c.dom.Text;
 
 import java.util.Locale;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-
+/*
     private static String leftPad(String aText,char aChar, int aWidth){
         String res = aText;
         for (int i = 0; i < aWidth - aText.length(); i++){
@@ -14,6 +15,8 @@ public class Main {
         }
         return res;
     }
+
+ */
 
     public static void main(String[] args) {
 
@@ -77,7 +80,7 @@ public class Main {
          */
 
         //10
-
+        /*
         Scanner input = new Scanner (System.in);
         int dec = 0;
         do {
@@ -88,5 +91,23 @@ public class Main {
             if (dec == 0) break;
             System.out.printf("System 10: %d \nSystem 2: %s \nSystem 16: %s \n", dec, leftPad(bin, '0', 7), leftPad(hex.toUpperCase(),'0', 4));
         }   while (true);
+
+         */
+        //11
+        int[] liczby = new int[30];
+        Random rnd = new Random();
+
+        for(int i = 0; i < 30; i++)
+            liczby[i] = rnd.nextInt();
+        int mx = Integer.MIN_VALUE;
+        int mn = Integer.MAX_VALUE;
+        long avg = 0;
+        for(int l : liczby) {
+            System.out.println(l);
+            if(l < mn) mn = l;
+            if(l > mx) mx = l;
+            avg += 1;
+        }
+        System.out.printf("MIN = %d, MAX = %d, AVG = %f", mn,mx,(float)avg/liczby.length);
     }
 }
