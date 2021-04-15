@@ -1,10 +1,25 @@
 package pl.lublin.wsei.java.cwiczenia;
 
+import org.w3c.dom.Text;
+
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
 
+    private static String leftPad(String aText,char aChar, int aWidth){
+        String res = aText;
+        for (int i = 0; i < aWidth - aText.length(); i++){
+            res = aChar+ res;
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
+
+
+
+        /*
         // 4
         System.out.println("Hello Java world\n");
         // 7a
@@ -37,6 +52,7 @@ public class Main {
         for (int i = 0; i < 10; i++) {
             System.out.printf("%d\t%f\t%f\n", i, Math.log(2) / Math.log (i), Math.pow(2,i) + Math.pow(2, i+1) );
         }
+         */
         //8
        /* Scanner input = new Scanner(System.in);
         int num1, num2;
@@ -47,6 +63,7 @@ public class Main {
         System.out.printf("Wynik dodawania %d + %d = %d%n",num1,num2,num1+num2); */
 
         //9
+        /*
         Scanner input = new Scanner (System.in);
         int num1 =0, num2 =0;
         do {
@@ -55,6 +72,21 @@ public class Main {
             num2 = input.nextInt();
             if((num1 == 0)|| (num2 == 0)) break;
             System.out.printf("Wynik dodawania %d + %d = %d%n", num1, num2, num1 + num2);
+        }   while (true);
+**
+         */
+
+        //10
+
+        Scanner input = new Scanner (System.in);
+        int dec = 0;
+        do {
+            System.out.print("Podaj liczbę do zamiany:");
+           dec = input.nextInt();
+           String hex = Integer.toHexString(dec);
+           String bin = Integer.toBinaryString(dec);
+            if (dec == 0) break;
+            System.out.printf("System 10: %d \nSystem 2: %s \nSystem 16: %s \n", dec, leftPad(bin, '0', 7), leftPad(hex.toUpperCase(),'0', 4));
         }   while (true);
     }
 }
