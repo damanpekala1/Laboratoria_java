@@ -38,12 +38,23 @@ public class Main {
             System.out.printf("%d\t%f\t%f\n", i, Math.log(2) / Math.log (i), Math.pow(2,i) + Math.pow(2, i+1) );
         }
         //8
-        Scanner input = new Scanner(System.in);
+       /* Scanner input = new Scanner(System.in);
         int num1, num2;
         System.out.print("Podaj pierwszą liczbę:");
         num1 = input.nextInt();
         System.out.print("Podaj drugą liczbę:");
         num2 = input.nextInt();
-        System.out.printf("Wynik dodawania %d + %d = %d%n",num1,num2,num1+num2);
+        System.out.printf("Wynik dodawania %d + %d = %d%n",num1,num2,num1+num2); */
+
+        //9
+        Scanner input = new Scanner (System.in);
+        int num1 =0, num2 =0;
+        do {
+            System.out.print("Podaj liczbę, które mam dodać:");
+            num1 = input.nextInt();
+            num2 = input.nextInt();
+            if((num1 == 0)|| (num2 == 0)) break;
+            System.out.printf("Wynik dodawania %d + %d = %d%n", num1, num2, num1 + num2);
+        }   while (true);
     }
 }
