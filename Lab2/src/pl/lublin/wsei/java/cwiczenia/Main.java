@@ -10,7 +10,9 @@ public class Main {
         acc.name="piotr Gołąbek";
         System.out.println(acc.getName());
         System.out.printf("%s%n",Account.capitalize("stanisŁaw maruSARz"));
-
+        System.out.printf("%s%n",Account.translit(("даміан")));
+        System.out.printf("%s%n",Account.translit(("пęкала")));
+        System.out.printf("%s%n",Account.translit(("абвгдеєжзиіїйклмнопрстуфхцчшщьюя")));
 
     }
 
