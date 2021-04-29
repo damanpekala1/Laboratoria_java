@@ -49,16 +49,29 @@ public class Pong1 extends Application {
     }
 
 
-    private void initKule(){
+    private void initKule() {
         Random lott = new Random();
-        for (int i =0; i <LICZBAKULEK; i++)
-        kulki[i] = new Kulka(
-                lott.nextDouble()*ARENAWIDTH+ARENAX1,
-            lott.nextDouble()*ARENAHEIGHT+ARENAY1,
-            5+lott.nextDouble()*20,
-            5+lott.nextDouble()*20,
-                Color.WHITESMOKE);
+        for (int i = 0; i < LICZBAKULEK / 2; i++){
+            kulki[i] = new Kulka(
+                    lott.nextDouble() * ARENAWIDTH + ARENAX1,
+                    lott.nextDouble() * ARENAHEIGHT + ARENAY1,
+                    5 + lott.nextDouble() * 20,
+                    5 + lott.nextDouble() * 20,
+                    Color.WHITESMOKE);
+    }
+            for (int i = 5; i < LICZBAKULEK; i++){
+            kulki[i] = new Rugby(
+                    lott.nextDouble() * ARENAWIDTH + ARENAX1,
+                    lott.nextDouble() * ARENAHEIGHT + ARENAY1,
+                    5 + lott.nextDouble() * 20,
+                    5 + lott.nextDouble() * 20,
+                    10,
+                    15
+
+            );
         }
+        }
+
 
     private void run(GraphicsContext gc) {
         gc.setFill(Color.BLACK);
