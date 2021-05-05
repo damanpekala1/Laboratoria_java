@@ -39,7 +39,7 @@ public class Pong1 extends Application {
     public void start(Stage stage) throws Exception{
         Canvas canvas = new Canvas(WIDTH, HEIGHT);
         GraphicsContext gc = canvas.getGraphicsContext2D();
-        Timeline t = new Timeline(new KeyFrame(Duration.millis(15), e -> run(gc)));
+        Timeline t = new Timeline(new KeyFrame(Duration.millis(50), e -> run(gc)));
         t.setCycleCount(Timeline.INDEFINITE);
         stage.setTitle("Kulki");
         stage.setScene(new Scene(new StackPane(canvas)));
@@ -66,7 +66,7 @@ public class Pong1 extends Application {
                     5 + lott.nextDouble() * 20,
                     5 + lott.nextDouble() * 20,
                     10,
-                    15
+                    15,35
 
             );
         }
