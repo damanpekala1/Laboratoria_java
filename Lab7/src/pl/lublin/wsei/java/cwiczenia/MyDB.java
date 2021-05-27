@@ -1,8 +1,6 @@
 package pl.lublin.wsei.java.cwiczenia;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Properties;
 
 public class MyDB {
@@ -10,6 +8,7 @@ public class MyDB {
     private int port;
 
     private Connection conn = null;
+    private Statement statement = null;
 
     private String user, password;
     public MyDB(String host, int port, String dbName){
@@ -43,8 +42,8 @@ public class MyDB {
 
         try{
             conn = DriverManager.getConnection(
-                    jdbcString, connectionProps
-            );
+                    jdbcString, connectionProps);
+            statement = conn.createStatement();
         }
 
         catch (SQLException e){
@@ -69,5 +68,14 @@ public class MyDB {
             }
             conn = null;
         }
+    }
+    public ResultSet selectData (String selectStatement){
+        if ((conn != null) && (statement != null))
+            try{
+                return statement.executeQuery(selectStatement);
+            } catch (SQLException e){
+                System.out.println("Błąd realizacji zapytania: " + selectStatement + ", " + e.getMessage());
+            }
+        return null;
     }
 }
