@@ -39,7 +39,7 @@ public class MyDB {
         connectionProps.put("password", "5323");
         connectionProps.put("serverTimezone", "Europe/Warsaw");
 
-        String jdbcString = "jdbc://mysql://" + host + ":" + port + "/" + dbName;
+        String jdbcString = "jdbc:mysql://" + host + ":" + port + "/" + dbName;
 
         try{
             conn = DriverManager.getConnection(
